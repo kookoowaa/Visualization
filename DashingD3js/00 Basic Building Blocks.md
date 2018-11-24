@@ -33,4 +33,4 @@
 <p style="font-size:12px;">Hello World!</p>
 ```
 
-ref to ![Dashing D3.js](https://www.dashingd3js.com/)
+ref. to [Dashing D3.js](https://www.dashingd3js.com/)
