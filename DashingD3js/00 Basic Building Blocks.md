@@ -32,5 +32,36 @@
 ```html
 <p style="font-size:12px;">Hello World!</p>
 ```
+- There are three ways to apply CSS to HTML
+- One is to apply to html elements as an attribute like the example above
+- Second way is to put it at the top of the HTML file (See lines #5 - #7)
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <style>
+      p {font-size : 12pt;}
+    </style>
+  </head>
+  <body>
+    <p>Hello World!</p>
+  </body>
+</html>
+```
+- The third way is to put into a separate css file that the html can reference to (See line #5)
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <p>Hello World!</p>
+  </body>
+</html>
+```
+
 
 ref. to [Dashing D3.js](https://www.dashingd3js.com/)
