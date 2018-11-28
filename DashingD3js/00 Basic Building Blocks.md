@@ -25,6 +25,7 @@
 </html>
 ```
 
+
 ## CSS
 - Cascading Style Sheet(CSS) resource is the style sheet language used for describing the presentation of the document
 - CSS can be applied to HTML, XML, and D3.js SVG
@@ -64,5 +65,79 @@
 ```
 
 
+## JavaScript
+- For D3.js purpose, functions and scripts can be written to interface with the data and D3.js
+- Much like CSS, JavaScript can be included in three main places in the HTML page
+- A simple inline example would look like:
+```html
+<input type="button" value="Hello" onClick="alert('Hello World!');" />
+```
+- If it goes in the Body then:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+  <body>
+    <script type="text/javescript">
+      alert("Hello World!");
+    </script>
+    <p>Hello World!</p>
+  </body>
+</html>
+```
+- If it goes in the Head, another file:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <script src="helloworld.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>Hello World!</p>
+  </body>
+</html>
+```
+- For the purpose of learning D3.js, I will include Javascript in the body of the HTML document as for now.
+
+
+## Document Object Model (DOM)
+- Document Object Model(DOM) is a convention for representing and interacting with objects in HTML, XML, XHTML documents.
+- DOM is separated in three parts: **Core, HTML, and XML**
+- DOM allows programs and scripts to**dynamically access and update the structure, content, and style** of a document.
+- DOM has Tree which can be used to address, manipulate, and navigate the stucture of the Document.
+- The structure of the DOM Tree would look like:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+  <body>
+    <p>
+      <span style="color:red;">Hello World!</span>
+    </p>
+    <input type="button" value = "Hello" onClicke="alert('Hello World!');" />
+  </body>
+</html>
+```
+- From above, the **p** element has a parent(**body**), and a sibling(**input**), and a child(**span**).
+- Using JS, jQuery, and CSS will allow user to select many elements at the same time.
+
+
+## Scalable Vector Graphics (SVG)
+- Scalable Vector Graphics(SVG) creates two-dimensional vector graphics.
+- SVG is not created out of pixels, and have a start and end point - they can be scaled up to larger without losing image quality.
+- SVG images adn their behaviors are defined in XML, and since it is part of the DOM specification, we can use the DOM Tree to access and update SVG images.
+- SVG comes with a basic set of shape elements:
+  - Rectangle
+  - Circle
+  - Ellipse
+  - Straight Line
+  - Polyline
+  - Polygon
+- Please find the examples at [here]('00-4 Scalable Vctor Graphics (SVG).html')
 
 ref. to [Dashing D3.js](https://www.dashingd3js.com/)
