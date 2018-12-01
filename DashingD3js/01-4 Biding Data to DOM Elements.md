@@ -19,7 +19,7 @@
 ```java
 var theData = [1,2,3]
 
-var p = d3.select("body").selctAll("p")
+var p = d3.select("body").selectAll("p")
           .data(theData)
           .enter()
           .append("p")
@@ -56,8 +56,43 @@ var p = d3.select("body").selctAll("p")
 ```java
 var theData = [1,2,3]
 
-var p = d3.select("body").selctAll("p")
+var p = d3.select("body").selectAll("p")
           .data(theData)
 ```
 - For this case, it will return a reference to the placeholder elements for **each data element that did not have a corresponding existing DOM element**.
 - However, it is limited to the use of chaining of **append, insert** and **select** operators to be followed.
+
+
+## D3.js Append Operator
+- Looking at the code again:
+```java
+var theData = [1,2,3]
+
+var p = d3.select("body").selectAll("p")
+          .data(theData)
+          .enter()
+          .append("p")
+          .text("hello")
+```
+- The previous steps had created placeholder element for following operators, `.append("p")` insert **p** elements for each placeholders.
+- `theData = [1,2,3]` had three data points, which `.append("p")` creates three HTML paragraph elements.
+- After the append operation, it will **return a selection of three** HTML paragraph element.
+
+
+## D3.js Text Operator
+- From the selection returned after append operator, `.text("hello")` inserts specified value on all selected (returned) elements.
+- The outcome should look like below:
+![](https://s3.amazonaws.com/dashingd3js/images/binding_data_to_dom_elements_with_d3js_625x616.png)
+
+
+
+## Where is the data [1,2,3]?
+- The example starts with script `var theData = [1,2,3]` and the html ended up with three paragraphs that says **hello**.
+- Looking at log from JavaScript Console, we can find where the data has been assigned to.
+```java
+console.log(p)
+```
+- From the log, paragraph elements are grouped in `_groups` and each object in `_groups` refer to single <p> in HTML element.
+- Under each Object and \_\_data\_\_ property, there is value assigned from `theData = [1,2,3]`
+- It should return something like this:
+![](https://s3.amazonaws.com/dashingd3js/images/binding_data_to_dom_elements_with_d3js_full_snapshot_625x697.png)
