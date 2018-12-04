@@ -18,9 +18,9 @@ var circleRadii = [40, 20, 10];
 >- cy - The y-axis coordinate of teh center of the circle
 >- r  - The radius of the circle
 - If we recall the basic building blocks section, we created a circle as follows:
-```java
+```html
 <svg width = '50' height = '50'>
-	<circle cx = '25' cy = '25' r = '25' fill = 'purple'/>
+  <circle cx = '25' cy = '25' r = '25' fill = 'purple'/>
 </svg>
 ```
 - Given above building blocks, we created circle using D3.js as follows:
@@ -28,14 +28,14 @@ var circleRadii = [40, 20, 10];
 var bodySelection = d3.select("body")
 
 var svgSelection = bodySelection.append("svg")
-								.attr("width", 50)
-								.attr("height", 50);
+                                .attr("width", 50)
+                                .attr("height", 50);
 
 var circleSelection = svgSelection.append("circle")
-								  .attr("cx", 25)
-								  .attr("cy", 25)
-								  .attr("r", 25)
-								  .style('fill', 'purple');
+                                  .attr("cx", 25)
+                                  .attr("cy", 25)
+                                  .attr("r", 25)
+                                  .style('fill', 'purple');
 ```
 
 
