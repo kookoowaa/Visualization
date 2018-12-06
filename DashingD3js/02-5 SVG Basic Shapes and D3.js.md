@@ -57,15 +57,6 @@
 
 ## Drawing Polyline & Polygon SVG Basic Shape using D3.js
 - For polyline and polygon, we will go over sample code for now
-<svg width="50" height="50">
-  <polyline fill="none" stroke="blue" stroke-width="2"
-            points="05,30
-                    15,30
-                    15,20
-                    25,20
-                    25,10
-                    35,10" />
-</svg>
 - Sample code for polyline would look like:
 ```html
 <svg width="50" height="50">
@@ -79,13 +70,8 @@
 </svg>
 
 ```
-<svg width="50" height="50">
-  <polygone fill="yellow" stroke="blue" stroke-width="2"
-            points="05,30
-                    15,10
-                    25,30" />
-</svg>
-- Sample code for polygon would likk like:
+
+- Sample code for polygon would look like:
 ```html
 <svg width="50" height="50">
   <polygone fill="yellow" stroke="blue" stroke-width="2"
