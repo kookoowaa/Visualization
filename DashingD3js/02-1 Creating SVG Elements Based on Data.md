@@ -46,8 +46,8 @@ var circleSelection = svgSelection.append("circle")
 var circleRadii = [40, 20, 10];
 
 var svgContainer = d3.select("body").append("svg")
-									.attr("width", 200)
-									.attr("height", 200);
+                                    .attr("width", 200)
+                                    .attr("height", 200);
 ```
 
 
@@ -64,13 +64,13 @@ var svgContainer = d3.select("body").append("svg")
 var circleRadii = [40, 20, 10];
 
 var svgContainer = d3.select("body").append("svg")
-									.attr("width", 200)
-									.attr("height", 200);
+                                    .attr("width", 200)
+                                    .attr("height", 200);
 
 var circles = svgContainer.selectAll("circle")
-						  .data(circleRadii)
-						  .enter()
-					   	  .append("circle")
+                          .data(circleRadii)
+                          .enter()
+                          .append("circle")
 ```
 
 - If we run the `console.log` for the following code, we find that the data has been bound to the SVG circle.
