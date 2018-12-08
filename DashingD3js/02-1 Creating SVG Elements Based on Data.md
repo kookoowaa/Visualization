@@ -88,18 +88,18 @@ console.log(d3.select("body").append("svg").attr("width", 200).attr("height", 20
 var circleRadii = [40, 20, 10];
 
 var svgContainer = d3.select("body").append("svg")
-									.attr("width", 200)
-									.attr("height", 200);
+                                    .attr("width", 200)
+                                    .attr("height", 200);
 
 var circles = svgContainer.selectAll("circle")
-						  .data(circleRadii)
-						  .enter()
-						  .append("circle")
+                          .data(circleRadii)
+                          .enter()
+                          .append("circle")
 
 var circlesAttr = circles.attr("cx", 50)
-						 .attr("cy", 50)
-						 .attr("r", function (d) {return d; })
-						 .style("fill", "green");
+                         .attr("cy", 50)
+                         .attr("r", function (d) {return d; })
+                         .style("fill", "green");
 ```
 ![](https://s3.amazonaws.com/dashingd3js/images/three_circles_with_the_right_radii_625x718.png)
 
@@ -114,23 +114,23 @@ var circlesAttr = circles.attr("cx", 50)
 var circleRadii = [40, 20, 10];
 
 var svgContainer = d3.select("body").append("svg")
-									.attr("width", 200)
-									.attr("height", 200);
+                                    .attr("width", 200)
+                                    .attr("height", 200);
 
 var circles = svgContainer.selectAll("circle")
-						  .data(circleRadii)
-						  .enter()
-						  .append("circle")
+                          .data(circleRadii)
+                          .enter()
+                          .append("circle")
 
 var circlesAttr = circles.attr("cx", 50)
-						 .attr("cy", 50)
-						 .attr("r", function (d) {return d; })
-						 .style("fill", function (c) {
-						 	var returnColor
-						 	if (c === 40) { returnColor = "green"
-						 	} else if (c === 20) {returnColor = "purle"
-						 	} else if (c === 10) {returnColor = "red"}
-						 	return returnColor
+                         .attr("cy", 50)
+                         .attr("r", function (d) {return d; })
+                         .style("fill", function (c) {
+                         	var returnColor
+                         	if (c === 40) { returnColor = "green"
+                            } else if (c === 20) {returnColor = "purle"
+                            } else if (c === 10) {returnColor = "red"}
+                            return returnColor
 						 });
 ```
 - The function returns "green" if radius is 40, "purple" if radius is 20, and "red" if radius is 10 for circle style.
