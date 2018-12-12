@@ -48,7 +48,7 @@
   </g>
 </svg>
 ```
-![](https://raw.githubusercontent.com/kookoowaa/Visualization/master/DashingD3js/02-9_fig1.svg)
+![](https://raw.githubusercontent.com/kookoowaa/Visualization/master/DashingD3js/02-9_fig1.svg?sanitize=true)
 
 
 ## Transforming SVG Elements Together (Part 1)
