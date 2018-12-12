@@ -8,3 +8,37 @@
 
 
 ## SVG Group Element
+- SVG Group Element is used to group SVG elements together where it is defined by **<g>** and **</g>**
+- It can be nested inside of other SVG Group Elements:
+```html
+<g>
+  <g>
+  ...
+  </g>
+</g>
+```
+- If any transformation applied to the SVG Group Element is applied to all of the child element contained inside
+
+- The major uses of the SVG Group Element are:
+> 1. **Grouping** - to group a set of SVG elements that share the same attr.
+> 2. **Transforming** - To define a new coordinate system for a set of SVG elements by applying a transformation to each coordinate specified
+
+
+## Grouping SVG Elements Together
+- The example will start with 4 SVG Basic Shape Elements with 2 circles and 2 rectangles:
+```html
+<svg width="200" height="200">
+  <circle cx="20" cy="20" r="20" fill="green" />
+  <rect x="110" y="110" height="30" width="30" fill="blue" />
+  <circle cx="70" cy="70" r="20" fill="purple" />
+  <rect x="160" y="160" height="30" width="30" fill="red" />
+</svg>
+```
+
+<svg width="200" height="200">
+  <circle cx="20" cy="20" r="20" fill="green" />
+  <rect x="110" y="110" height="30" width="30" fill="blue" />
+  <circle cx="70" cy="70" r="20" fill="purple" />
+  <rect x="160" y="160" height="30" width="30" fill="red" />
+</svg>
+
