@@ -48,7 +48,7 @@
   </g>
 </svg>
 ```
-![](02-9_fig1.svg)
+![]('fig/02-9 fig1.svg/)
 
 
 ## Transforming SVG Elements Together (Part 1)
