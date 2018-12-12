@@ -48,7 +48,7 @@
   </g>
 </svg>
 ```
-![](fig/02-9 fig1.svg)
+![](fig/02-9_fig1.svg)
 
 
 ## Transforming SVG Elements Together (Part 1)
@@ -65,7 +65,7 @@
   </g>
 </svg>
 ```
-![](fig/02-9 fig2.svg)
+![](fig/02-9_fig2.svg)
 - However, that is not exactly what we expected for a solution, where we use SVG Group element
 
 
@@ -96,11 +96,11 @@
 </svg>
 ```
 - There are 6 types of transformation available:
->1. matrix(<a> <b> <c> <d> <e> <f>): transformation matrix of six values
->2. translate(<x> [<y>]): translation by x and y. If y not given, it is assumed to be zero
->3. scale(<x> [<y>]): scale operation by x and y. If y not given, it is assumed to be same as x
->4. skewX(<a>): skew transformation along the X axis by a degrees
->5. skewY(<a>): skew transformation along the Y axis by a degrees
+>1. matrix(\<a\> \<b\> \<c\> \<d\> \<e\> \<f\>): transformation matrix of six values
+>2. translate(\<x\> [\<y\>]): translation by x and y. If y not given, it is assumed to be zero
+>3. scale(\<x\> [\<y\>]): scale operation by x and y. If y not given, it is assumed to be same as x
+>4. skewX(\<a\>): skew transformation along the X axis by a degrees
+>5. skewY(\<a\>): skew transformation along the Y axis by a degrees
 
 
 ## Transformaing SVG Elements Together (Part 2)
@@ -118,6 +118,6 @@
   </g>
 </svg>
 ```
-![](fig/02-9 fig3.svg)
+![](fig/02-9_fig3.svg)
 - If we use the `transform` method, interestingly the *cx* values **do not change**
 
