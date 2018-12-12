@@ -34,11 +34,23 @@
   <rect x="160" y="160" height="30" width="30" fill="red" />
 </svg>
 ```
-
+- It works fine, but it is very difficult to decipher what is happening.
+- With SVG Group element, the code can be organized and easier to read:
+```html
 <svg width="200" height="200">
-  <circle cx="20" cy="20" r="20" fill="green" />
-  <rect x="110" y="110" height="30" width="30" fill="blue" />
-  <circle cx="70" cy="70" r="20" fill="purple" />
-  <rect x="160" y="160" height="30" width="30" fill="red" />
+  <g>
+    <circle cx="20" cy="20" r="20" fill="green" />
+    <circle cx="70" cy="70" r="20" fill="purple" />
+  </g>
+  <g>
+    <rect x="110" y="110" height="30" width="30" fill="blue" />
+    <rect x="160" y="160" height="30" width="30" fill="red" />
+  </g>
 </svg>
+```
+![](02-9_fig1.svg)
+
+
+## Transforming SVG Elements Together (Part 1)
+- If we wanted to move circles 80 unites to the right, then 
 
