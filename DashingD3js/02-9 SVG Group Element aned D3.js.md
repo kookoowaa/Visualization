@@ -121,3 +121,111 @@
 ![](fig/02-9_fig3.svg)
 - If we use the `transform` method, interestingly the *cx* values **do not change**
 
+
+## Grouping SVG Elements with D3.js
+- Using D3.js and console command, we will produce the first example as follows:
+```java
+var circleData = [
+  { "cx": 20, "cy": 20, "radius": 20, "color" : "green" },
+  { "cx": 70, "cy": 70, "radius": 20, "color" : "purple" }];
+
+
+var rectangleData = [
+  { "rx": 110, "ry": 110, "height": 30, "width": 30, "color" : "blue" },
+  { "rx": 160, "ry": 160, "height": 30, "width": 30, "color" : "red" }];
+
+var svgContainer = d3.select("body").append("svg")
+                                    .attr("width",200)
+                                    .attr("height",200);
+
+var circles = svgContainer.selectAll("circle")
+                          .data(circleData)
+                          .enter()
+                          .append("circle");
+
+var circleAttributes = circles
+                       .attr("cx", function (d) { return d.cx; })
+                       .attr("cy", function (d) { return d.cy; })
+                       .attr("r", function (d) { return d.radius; })
+                       .style("fill", function (d) { return d.color; });
+
+var rectangles = svgContainer.selectAll("rect")
+                             .data(rectangleData)
+                             .enter()
+                             .append("rect");
+
+var rectangleAttributes = rectangles
+                          .attr("x", function (d) { return d.rx; })
+                          .attr("y", function (d) { return d.ry; })
+                          .attr("height", function (d) { return d.height; })
+                          .attr("width", function (d) { return d.width; })
+                          .style("fill", function(d) { return d.color; });
+```
+![](https://s3.amazonaws.com/dashingd3js/images/svg_group_element_example_generated_with_d3.js_652x774.png)
+___
+- If we were to group elements together, we simply append SVG Group Element after container:
+```java
+var svgContainer = d3.select("body").append("svg")
+                                    .attr("width",200)
+                                    .attr("height",200);
+
+var circleGroup = svgContainer.append("g");
+
+// Note that to draw circle, we used "circleGroup" instead of "svgContainer"
+var circles = circleGroup.selectAll("circle")
+                         .data(circleData)
+                         .enter()
+                         .append("circle");
+```
+- If we wanted to tansform figures, then we simply add attributes to the Group:
+```java
+var circleGroup = svgContainer.append("g")
+                              .attr("transform", "translate(80,0)");
+```
+___
+- Should we put all together, the full example would look like:
+```java
+var circleData = [
+  { "cx": 20, "cy": 20, "radius": 20, "color" : "green" },
+  { "cx": 70, "cy": 70, "radius": 20, "color" : "purple" }];
+
+
+var rectangleData = [
+  { "rx": 110, "ry": 110, "height": 30, "width": 30, "color" : "blue" },
+  { "rx": 160, "ry": 160, "height": 30, "width": 30, "color" : "red" }];
+
+var svgContainer = d3.select("body").append("svg")
+                                    .attr("width",200)
+                                    .attr("height",200);
+
+// SVG group element for circles
+var circleGroup = svgContainer.append("g")
+                              .attr("transform", "translate(80,0)");
+
+// circles added to the circleGroup
+var circles = circleGroup.selectAll("circle")
+                          .data(circleData)
+                          .enter()
+                          .append("circle");
+
+var circleAttributes = circles
+                       .attr("cx", function (d) { return d.cx; })
+                       .attr("cy", function (d) { return d.cy; })
+                       .attr("r", function (d) { return d.radius; })
+                       .style("fill", function (d) { return d.color; });
+
+// rectangles added to the svgContainer
+var rectangles = svgContainer.selectAll("rect")
+                             .data(rectangleData)
+                             .enter()
+                             .append("rect");
+
+var rectangleAttributes = rectangles
+                          .attr("x", function (d) { return d.rx; })
+                          .attr("y", function (d) { return d.ry; })
+                          .attr("height", function (d) { return d.height; })
+                          .attr("width", function (d) { return d.width; })
+                          .style("fill", function(d) { return d.color; });
+```
+- This returns:
+![](https://s3.amazonaws.com/dashingd3js/images/applied_a_transformation_to_an_svg_group_element_using_d3.js_596x775.png)
