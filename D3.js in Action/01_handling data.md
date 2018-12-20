@@ -11,7 +11,7 @@
 - CSV is not capable of explaining nested relationship
 - `d3.csv()` and `d3.json` creates JSON variable, whereas `d3.xml()` creates XML document
 > **IMPORTANT**
->- Importing data via d3(`d3.csv()`, `d3.json()`, or `d3.xml()`) does not allow opening a local file.
+>- Importing data via d3(`d3.csv()`, `d3.json()`, or `d3.xml()`) does **not allow** opening a **local file**
 >- To get around this, a local web server is need, where pytyhon can help
 ```cmd
 ## before typing in the code, make sure that you are on the right directory
