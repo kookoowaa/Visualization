@@ -22,4 +22,53 @@ python -m http.server 8888
 
 
 ### File Format  
-- 
+- `d3.csv()` and `d3.json()` take following parametor to load file:
+```java
+d3.csv("Source/cities.csv", function(error,data) {console.log(error,data)})
+// error is optional, and can only specify data
+d3.csv("Source/cities.csv", function(data) {console.log(data)})
+```
+- The methods above are async-hronous and need to wait for the data to fully loaded.
+
+
+## Data Formatting
+- It is important to pre-process data before analysis or visualization.
+- In terms of formats, data can be in quantity, geometry, category, phase, datetime, and raw data like texts and prictures.
+- For the ease of analysis and visualization, it is important to transform data acoording to the purpose of it:
+
+> ### 1. Casting: 
+> First, dtype of variables need to be transfromed accordingly, or casted accordingly.
+> Some of the dtypes that are familiar includes: date, int, float, array, etc.
+```java
+// Parsing data
+parseInt("77"); // str > int
+parseFloat("3.14"); // str > float
+Date.parse("Sun, 22 Dec 2013 08:00:00 GMT"); // str > date
+text = "alpha,beta,gamma";
+text.split(","); // str > array
+```
+> ### 2. Scaling:
+>- It is not so typical to expect your data to fit in screen straightly without formatting, because of scale.
+>- `d3.scale().linear()` is frequently used to Normalize data to fit into certain "range", given "domain" range from the data.
+>- Acoording to data, we can also log-scale, power-scale, or time-scale the data.
+>- For instance, we can linear scale data to fit into 500px screen given population ranging from 500,000 to 13,000,000 as follows:
+```java
+// scale to number
+var newRamp = d3.scalelinear().domain([500000,13000000]).range([0,500]);
+newRamp(1000000);
+// return 20
+newRamp(9000000);
+// return 340
+
+
+//scale to color
+var newRamp = d3.scalelinear().domain([500000,13000000]).range(["blue", "red"]);
+newRamp(1000000);
+// return rgb(10, 0, 245)
+newRamp(9000000);
+// return rgb(173, 0, 82)
+```
+
+
+>### 3. Binning:
+>### 4. Nesting:
