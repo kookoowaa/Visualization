@@ -67,7 +67,26 @@ newRamp(1000000);
 // return rgb(10, 0, 245)
 newRamp(9000000);
 // return rgb(173, 0, 82)
-```
+D
+:q
+Dfdasnklnlkvcxznkl
+
+
+
+
+A
+A
+B
+B
+
+D
+B
+B
+B
+A
+
+C
+``
 
 
 >### 3. Binning:
