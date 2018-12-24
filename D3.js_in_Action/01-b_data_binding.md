@@ -98,7 +98,7 @@ d3.select("svg").selectAll("rect")
 ```
 - This time, it returns a bar with different colors ('actually of same color, but bars are put on other bars and opacity makes the color look different') as below:  
 
-![](Color Figures/Part 1/2-13.jpg)
+![](Color_Figures/Part_1/2-13.jpg)
 - Still, the chart is difficult to tell, and need more adjustment such as rearranging x-axis:
 ```java
 var simpleArray = [15, 50 ,22, 8, 100, 10];
@@ -119,7 +119,7 @@ d3.select("svg").selectAll("rect")
                 .attr("x", function(d,i) {return i *10})
 ```
   
-![](Color Figures/Part 1/2-14.jpg)
+![](Color_Figures/Part_1/2-14.jpg)
 - As we all are aware of, y-axis grows downward, and it displays figure unfamiliar to many of us:
 ```java
 var simpleArray = [15, 50 ,22, 8, 100, 10];
