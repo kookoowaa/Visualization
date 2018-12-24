@@ -64,3 +64,77 @@ ___
 - From a previous example, we can find that each dictionary set from data is assigned to '\<div\>'.
 - That is because of the use of in-line function, and the function returns **index** and **data** where we notes **i** for index and **d** for data.
 - From here after, we will be using "d3ia.html" for visualization samples via d3.
+- Let us start with simple array with numbers `[15, 50, 22, 8, 100, 10]` and bar chart:
+```java
+var simpleArray = [15, 50 ,22, 8, 100, 10];
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return d})
+```
+- It will return a bar filled in black, which is difficult to distinguish which part of bar represent the data.
+- Should we change the code a little to control "opacity" and other style variables, it could be more informative:
+```java
+var simpleArray = [15, 50 ,22, 8, 100, 10];
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return d})
+// style attributes are added
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", "1px")
+                .style("opacity", .25)
+```
+- This time, it returns a bar with different colors ('actually of same color, but bars are put on other bars and opacity makes the color look different') as below:
+![]('Color Figures/Part 1/2-13.jpg')
+- Still, the chart is difficult to tell, and need more adjustment such as rearranging x-axis:
+```java
+var simpleArray = [15, 50 ,22, 8, 100, 10];
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return d})
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", "1px")
+                .style("opacity", .25)
+// adjust x-axis by assigning each data index * 10 for its x choordinate
+                .attr("x", function(d,i) {return i *10})
+```
+![]('Color Figures/Part 1/2-14.jpg')
+- As we all are aware of, y-axis grows downward, and it displays figure unfamiliar to many of us:
+```java
+var simpleArray = [15, 50 ,22, 8, 100, 10];
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return d})
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", "1px")
+                .style("opacity", .25)
+                .attr("x", function(d,i) {return i *10})
+// make sure the graph (0,0) start from bottom-left
+                .attr("y", function(d) {return 100-d})
+```
