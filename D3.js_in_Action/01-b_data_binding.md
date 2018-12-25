@@ -140,5 +140,135 @@ d3.select("svg").selectAll("rect")
 // make sure the graph (0,0) start from bottom-left
                 .attr("y", function(d) {return 100-d})
 ```
+![](Color_figures/Part_1/2-15.jpg)
 
 ### Data Scaling
+- When the size of \<svg\> corresponds to the objects child to it, it is fair enough to visualize the way it is.
+- However, in many cases, the variance of variables are quite large to draw in one screen.
+- Drawing a graph with following data would not fully display the characteristics of data:
+```java
+//data variance is large (14~24500)
+var simpleArray = [14, 68, 24500, 430, 19, 1000, 5555];
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return d})
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", "1px")
+                .style("opacity", .25)
+                .attr("x", function(d,i) {return i *10})
+                .attr("y", function(d) {return 100-d})
+```
+![](Color_figures/Part_1/2-16.jpg)
+
+- Scaling comes in play, in such a case.
+- `d3.scaleLinear().domain().range()` takes agmt that are within "domain range", and returns value that should fit into the "range given".
+- In application, please refer to an example below:
+```java
+var simpleArray = [14, 68, 24500, 430, 19, 1000, 5555];
+
+// sets scaling function
+var simpleScaling = d3.scaleLinear().domain([0, 24500]).range([0, 100])
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return simpleScaling(d)})
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", "1px")
+                .style("opacity", .25)
+                .attr("x", function(d,i) {return i *10})
+                .attr("y", function(d) {return 100- simpleScaling(d)})
+```
+![](Color_figures/Part_1/2-17.jpg)
+
+- It maybe more appropriate to use **polylinear scaling** when data variance is exceptionally large.
+- It sets several points to the domain and range to display the relationship differently.
+- From below example, it implies that there is meaningful observation from 0-100, 100-1000, and 1000+ (note that first range covers most from 0-50):
+```java
+var simpleArray = [14, 68, 24500, 430, 19, 1000, 5555];
+
+// polylinear scaling
+var simpleScaling = d3.scaleLinear().domain([0, 100, 1000, 24500]).range([0, 50, 75, 100])
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return simpleScaling(d)})
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", "1px")
+                .style("opacity", .25)
+                .attr("x", function(d,i) {return i *10})
+                .attr("y", function(d) {return 100- simpleScaling(d)})
+```
+![](Color_figures/Part_1/2-18.jpg)
+
+- Data point exceeding certain range may not be so significant in cases.
+- From our data, if response exceeding 500 means little, we can set "domain range" within 0-500:
+```java
+var simpleArray = [14, 68, 24500, 430, 19, 1000, 5555];
+
+// adjust domain range
+var simpleScaling = d3.scaleLinear().domain([0, 100, 500]).range([0, 50, 100])
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return simpleScaling(d)})
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", "1px")
+                .style("opacity", .25)
+                .attr("x", function(d,i) {return i *10})
+                .attr("y", function(d) {return 100- simpleScaling(d)})
+
+simpleScaling(1000)
+// returns 162.5
+```
+- Also note that scaling exceeding the "domain range" returns value exceeding the "range given".
+- In order to prevent returning value exceeding "range given", `.clamp(true)` may be used:
+```java
+var simpleArray = [14, 68, 24500, 430, 19, 1000, 5555];
+
+// adjust domain range
+var simpleScaling = d3.scaleLinear().domain([0, 100, 500]).range([0, 50, 100]).clamp(true)
+
+d3.select("body").append("svg");
+
+d3.select("svg").selectAll("rect")
+                .data(simpleArray)
+                .enter()
+                .append("rect")
+                .attr("width", 10)
+                .attr("height", function(d) {return simpleScaling(d)})
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", "1px")
+                .style("opacity", .25)
+                .attr("x", function(d,i) {return i *10})
+                .attr("y", function(d) {return 100- simpleScaling(d)})
+
+simpleScaling(1000)
+// returns 100
+```
+![](Color_figures/Part_1/2-20.jpg)
