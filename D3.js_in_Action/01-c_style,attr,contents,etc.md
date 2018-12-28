@@ -63,36 +63,41 @@ d3.csv("cities.csv")
 
 ```java
 d3.json("tweets.json")
-  .then(funtion(incomingData){
+  .then(function(incomingData){
 
   	var nestedTweets = d3.nest()
-  	                     .key(function(el) {return el.user;})
-  	                     .entries(incomingData)
+  	                     .key(function(el) {
+                             return el.user;
+                         })
+  	                     .entries(incomingData);
+      
     nestedTweets.forEach(function (el) {
     	el.numTweets = el.values.length;
     })
 
     var maxTweets = d3.max(nestedTweets, function(el) {
     	return el.numTweets;
-    });
+    })
 
     var yScale = d3.scaleLinear().domain([0,maxTweets]).range([0,100])
 
     d3.select("svg")
       .selectAll("bar")
+      .data(nestedTweets)
       .enter()
       .append("rect")
       .attr("width", 50)
       .attr("height", function(d) {return yScale(d.numTweets)})
       .attr("x", function (d,i) {return i * 60;})
-      .attr("y", function (d), {return 100-yScale(d.numTweets)})
+      .attr("y", function (d) {return 100 - yScale(d.numTweets)})
       .style("fill", "blue")
       .style("stroke-width", "1px")
       .style("stroke", "red")
-      .style("opacity", 0.25)
+      .style("opacity", .25)
 
  })
 
 
   //
 ```
+
