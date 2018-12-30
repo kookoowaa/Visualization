@@ -69,7 +69,7 @@ d3.json("tweets.json")
   	                     .key(function(el) {
                              return el.user;
                          })
-  	                     .entries(incomingData);
+  	                     .entries(incomingData.tweets);
       
     nestedTweets.forEach(function (el) {
     	el.numTweets = el.values.length;
