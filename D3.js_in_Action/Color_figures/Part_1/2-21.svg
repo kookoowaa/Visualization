@@ -1,0 +1,10 @@
+<svg style="height: 480px; width: 600px;" xmlns="http://www.w3.org/2000/svg">
+	<rect width="50" height="26.53846153846154" x="0" y="453.46153846153845" style="fill: blue; stroke: red; stroke-width: 1px; opacity: 0.25;"></rect>
+	<rect width="50" height="17.692307692307693" x="60" y="462.3076923076923" style="fill: blue; stroke: red; stroke-width: 1px; opacity: 0.25;"></rect>
+	<rect width="50" height="442.3076923076923" x="120" y="37.69230769230768" style="fill: blue; stroke: red; stroke-width: 1px; opacity: 0.25;"></rect>
+	<rect width="50" height="460" x="180" y="20" style="fill: blue; stroke: red; stroke-width: 1px; opacity: 0.25;"></rect>
+	<rect width="50" height="88.46153846153847" x="240" y="391.53846153846155" style="fill: blue; stroke: red; stroke-width: 1px; opacity: 0.25;"></rect>
+	<rect width="50" height="35.38461538461539" x="300" y="444.61538461538464" style="fill: blue; stroke: red; stroke-width: 1px; opacity: 0.25;"></rect>
+	<rect width="50" height="435.2307692307692" x="360" y="44.769230769230774" style="fill: blue; stroke: red; stroke-width: 1px; opacity: 0.25;"></rect>
+	<rect width="50" height="435.2307692307692" x="420" y="44.769230769230774" style="fill: blue; stroke: red; stroke-width: 1px; opacity: 0.25;"></rect>
+</svg>
