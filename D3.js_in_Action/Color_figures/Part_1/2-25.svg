@@ -1,0 +1,42 @@
+<svg width="550" height="500" xmlns="http://www.w3.org/2000/svg">
+	<g transform="translate(453.48115299334813,30)">
+		<circle r="20" style="fill: rgb(255, 0, 0); stroke: black;"></circle>
+		<text>Al-14</text>
+	</g>
+	<g transform="translate(466.2305986696231,366.75)">
+		<circle r="5" style="fill: rgb(255, 191, 191); stroke: black;"></circle>
+		<text>Al-14</text>
+	</g>
+	<g transform="translate(480,254.5)">
+		<circle r="10" style="fill: rgb(255, 128, 128); stroke: black;"></circle>
+		<text>Al-15</text>
+	</g>
+	<g transform="translate(20,479)">
+		<circle r="0" style="fill: rgb(255, 255, 255); stroke: black;"></circle>
+		<text>Roy-0</text>
+	</g>
+	<g transform="translate(21.529933481152995,479)">
+		<circle r="0" style="fill: rgb(255, 255, 255); stroke: black;"></circle>
+		<text>Roy-0</text>
+	</g>
+	<g transform="translate(33.76940133037694,479)">
+		<circle r="0" style="fill: rgb(255, 255, 255); stroke: black;"></circle>
+		<text>Roy-0</text>
+	</g>
+	<g transform="translate(42.949002217294904,142.25)">
+		<circle r="15" style="fill: rgb(255, 64, 64); stroke: black;"></circle>
+		<text>Roy-1</text>
+	</g>
+	<g transform="translate(358.1152993348115,366.75)">
+		<circle r="5" style="fill: rgb(255, 191, 191); stroke: black;"></circle>
+		<text>Pris-11</text>
+	</g>
+	<g transform="translate(400.95343680709533,366.75)">
+		<circle r="5" style="fill: rgb(255, 191, 191); stroke: black;"></circle>
+		<text>Pris-12</text>
+	</g>
+	<g transform="translate(134.7450110864745,142.25)">
+		<circle r="15" style="fill: rgb(255, 64, 64); stroke: black;"></circle>
+		<text>Sam-4</text>
+	</g>
+</svg>
